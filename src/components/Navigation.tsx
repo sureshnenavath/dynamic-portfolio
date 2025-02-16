@@ -31,15 +31,19 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-semibold">
+            <HashLink to="/#home" smooth className="text-xl font-semibold">
               Nenavath Suresh
-            </Link>
+            </HashLink>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.length > 0 && menuItems.map((item) => (
-              (item.label === 'Home' || item.label === 'Contact') ? (
+              item.label === 'Home' ? (
+                <HashLink key={item.label} to="/#home" smooth className="text-sm font-medium hover:text-primary/80 transition-colors">
+                  {item.label}
+                </HashLink>
+              ) : item.label === 'Contact' ? (
                 <Link key={item.label} to={item.href} className="text-sm font-medium hover:text-primary/80 transition-colors">
                   {item.label}
                 </Link>
