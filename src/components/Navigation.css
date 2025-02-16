@@ -1,0 +1,4 @@
+/* Add this to your Navigation.css file */
+.active-link {
+  color: blue; /* Change this to your desired active link color */
+}
